@@ -1,6 +1,7 @@
 function upload(file) {
     if (file !== undefined)
         document.getElementById("mainimg").src = URL.createObjectURL(file);
+    classify();
 }
 
 function replaceImg() {
@@ -21,4 +22,21 @@ function displayImg() {
     }
     document.getElementById("exButt").innerHTML = "";
     // console.log(imgEl);
+}
+
+let net;
+
+async function loadMobilenet() {
+    net = await mobilenet.load();
+    console.log("done loading mobile net");
+    classify();
+}
+
+async function classify() {
+    await net;
+    const img = document.getElementById("mainimg");
+    console.log(img);
+    const ans = await net.classify(img);
+    console.log(ans);
+    document.getElementById("ans").innerHTML = ans[0].className;
 }

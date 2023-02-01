@@ -7,12 +7,12 @@ author: Kevin/Tristan
 
 <p>This is a site for image recognization.</p>
 
-<p>The answer is: <span id="ans"><u>loading...</u></span></p>
+<p>The answer is: <u><span id="ans">loading...</span></u></p>
 
 <div>
     <div>
         <p>Image chosen is shown below: </p>
-        <img id="mainimg" class="shadow-2xl bg-white rounded-lg" alt="Picture Load Failed! "
+        <img id="mainimg" crossOrigin='anonymous' onload="loadMobilenet()" class="shadow-2xl bg-white rounded-lg" alt="Picture Load Failed! "
             src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" style="height: 300px;" />
     </div>
     <div>
@@ -42,6 +42,8 @@ author: Kevin/Tristan
     <p><small>PS: Remember to save your own results! The photo and results won't be saved automatically! </small></p>
 </div>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
 <script type="text/javascript" src="/static/js/main.js"></script>
