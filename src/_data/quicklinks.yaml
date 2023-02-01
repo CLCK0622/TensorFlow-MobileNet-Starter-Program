@@ -7,7 +7,7 @@ links:
     url: "https://www.11ty.dev/"
     desc: Eleventy is a simpler static site generator.
   - title: Image Recognization
-    url: ""
+    url: "/imgrec"
     desc: WIP
   - title: Mood Recognization
     url: ""

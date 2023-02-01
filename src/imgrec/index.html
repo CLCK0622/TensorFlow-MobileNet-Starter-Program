@@ -1,5 +1,5 @@
 ---
-title: "image recognization"
+title: "Image Recognization"
 layout: "posts"
 date: 2023-02-01 11:18:33.00
 author: Kevin/Tristan
@@ -10,14 +10,23 @@ author: Kevin/Tristan
 <p>The answer is: <span id="ans"><b>loading...</b></span></p>
 
 <div>
-    <p>Image chosen is showed below: </p>
-
-<img id="mainimg" src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" width="50%" />
-<p>You can also choose another photo from the followings by clicking on it: </p>
-<img id="img1" src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" width="10%" style="display: inline; " />
-<img id="img2" src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" width="10%" style="display: inline; " />
-<img id="img3" src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" width="10%" style="display: inline; " />
-<img id="img4" src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" width="10%" style="display: inline; " />
+    <div>
+        <p>Image chosen is showed below: </p>
+        <img id="mainimg" class="shadow-2xl bg-white rounded-lg" alt="Picture Load Failed! "
+            src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" width="50%" />
+    </div>
+    <div>
+        <p>You can also choose another photo from the followings by clicking on it: </p>
+        <u>Examples</u>:
+        <img id="img1" class="shadow-2xl bg-white rounded-lg" alt="Picture Load Failed! "
+            src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" width="10%" style="display: inline; " />
+        <img id="img2" class="shadow-2xl bg-white rounded-lg" alt="Picture Load Failed! "
+            src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" width="10%" style="display: inline; " />
+        <img id="img3" class="shadow-2xl bg-white rounded-lg" alt="Picture Load Failed! "
+            src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" width="10%" style="display: inline; " />
+        <img id="img4" class="shadow-2xl bg-white rounded-lg" alt="Picture Load Failed! "
+            src="https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" width="10%" style="display: inline; " />
+    </div>
 
 </div>
 
@@ -25,7 +34,8 @@ author: Kevin/Tristan
     <p>Or upload your own photo for recognition: </p>
     <input type="file" accept="image/*" onchange="upload(this.files[0]);" />
     <p>Incredibly, just pasting your link of your image is also acceptable: </p>
-    <input id="submitUrl" class="shadow-2xl bg-white rounded-lg" type="text" onchange="replaceImg()" style="width: 100%;" />
+    <input id="submitUrl" class="shadow-2xl bg-sky-100 rounded-lg" type="text" onchange="replaceImg()"
+        style="width: 100%;" />
 </div>
 
 <div>
