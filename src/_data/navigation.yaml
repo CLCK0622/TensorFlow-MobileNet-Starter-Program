@@ -1,7 +1,7 @@
 ---
 items:
-  - text: Menu One
-    url: "#"
+  - text: Img
+    url: "/imgrec"
   - text: Menu Two
     url: "#"
   - text: Menu Three
