@@ -17,18 +17,24 @@ author: Kevin/Tristan
     </div>
     <div>
         <p>You can also choose another photo from the followings by clicking on it: </p>
-        <div id="exButt"><button onclick="displayImg()"><u>Show Examples</u></button></div>
+        <div id="exButt"><button onclick="displayImg()" class="mr-4 py-2 px-4 rounded-lg border-0 bg-sky-100 hover:bg-sky-200">Show Examples</button></div>
         <div id="exampleEl">
         </div>
+        <style>
+            #example:hover {
+                transform: scale(1.1);
+                transition: all 0.25s;
+            }
+        </style>
     </div>
 
 </div>
 
 <div>
     <p>Or upload your own photo for recognition: </p>
-    <input type="file" accept="image/*" onchange="upload(this.files[0]);" />
+    <input type="file" class="file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-sky-100 hover:file:bg-sky-200" accept="image/*" onchange="upload(this.files[0]);" />
     <p>Incredibly, just pasting the link of your image is also acceptable: </p>
-    <input id="submitUrl" class="shadow-2xl bg-sky-100 rounded-lg" type="text" onchange="replaceImg()"
+    <input id="submitUrl" class="shadow-2xl bg-sky-100 hover:bg-sky-200 rounded-lg border-1 border-sky-700" type="text" onchange="replaceImg()"
         style="width: 100%;" />
 </div>
 

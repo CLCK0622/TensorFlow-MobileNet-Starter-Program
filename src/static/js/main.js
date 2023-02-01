@@ -17,7 +17,7 @@ function displayImg() {
     imgEl.innerHTML += "<u>Examples</u>: ";
     for (let i = 0; i < 4; i++) {
         console.log("example" + (i + 1));
-        imgEl.innerHTML += '<img id="img1" class="shadow-2xl bg-white rounded-lg" alt="Picture Load Failed! " src="/static/img/imgrec/' + album[i] + '.jpg" style="width: 10%; display: inline; margin: 10px; " onclick="document.getElementById(' + "'mainimg'" + ').src = this.src;" />'
+        imgEl.innerHTML += '<img id="example" class="rounded-lg" alt="Picture Load Failed! " src="/static/img/imgrec/' + album[i] + '.jpg" style="width: 10%; margin: 10px; display: inline; " onclick="document.getElementById(' + "'mainimg'" + ').src = this.src;" />'
     }
     document.getElementById("exButt").innerHTML = "";
     // console.log(imgEl);
