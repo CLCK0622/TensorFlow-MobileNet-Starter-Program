@@ -29,12 +29,14 @@ let net;
 async function loadMobilenet() {
     net = await mobilenet.load();
     console.log("done loading mobile net");
+    
     classify();
 }
 
 async function classify() {
     await net;
     const img = document.getElementById("mainimg");
+    
     console.log(img);
     const ans = await net.classify(img);
     console.log(ans);
