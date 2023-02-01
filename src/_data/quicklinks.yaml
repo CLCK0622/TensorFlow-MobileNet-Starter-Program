@@ -6,9 +6,9 @@ links:
   - title: Eleventy
     url: "https://www.11ty.dev/"
     desc: Eleventy is a simpler static site generator.
-  - title: Image Recognization
+  - title: Image Recognition
     url: "/imgrec"
-    desc: WIP
-  - title: Mood Recognization
+    desc: A simple but useful tool using TensorFlow Mobilenet.
+  - title: Mood Recognition
     url: ""
     desc: WIP
