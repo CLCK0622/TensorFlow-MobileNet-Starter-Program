@@ -28,6 +28,11 @@ function displayImg() {
 let net;
 let netload = false;
 
+function reloadMobilenet() {
+    netload = false;
+    loadMobilenet();
+}
+
 async function loadMobilenet() {
     document.getElementById("status").innerHTML = "<u>loading... </u>";
     if (!netload) {
