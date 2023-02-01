@@ -1,3 +1,4 @@
+
 function upload(file) {
     if (file !== undefined)
         document.getElementById("mainimg").src = URL.createObjectURL(file);
@@ -25,18 +26,22 @@ function displayImg() {
 }
 
 let net;
+let netload = false;
 
 async function loadMobilenet() {
-    net = await mobilenet.load();
-    console.log("done loading mobile net");
-    
+    document.getElementById("status").innerHTML = "<u>loading... </u>";
+    if (!netload) {
+        net = await mobilenet.load();
+        console.log("done loading mobile net");
+    }
+    netload = true;
+    document.getElementById("status").innerHTML = "<span style='color: red; '>Done! </span>";
     classify();
 }
 
 async function classify() {
     await net;
     const img = document.getElementById("mainimg");
-    
     console.log(img);
     const ans = await net.classify(img);
     console.log(ans);
