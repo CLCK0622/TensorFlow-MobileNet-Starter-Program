@@ -46,4 +46,5 @@ async function classify() {
     const ans = await net.classify(img);
     console.log(ans);
     document.getElementById("ans").innerHTML = ans[0].className;
+    document.getElementById("ansProb").innerHTML = ans[0].probability;
 }
