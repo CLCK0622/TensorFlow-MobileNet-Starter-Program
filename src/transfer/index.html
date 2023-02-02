@@ -16,12 +16,13 @@ author: Kevin/Tristan
 <button onclick="webcamScan()" class="mr-4 py-2 px-4 rounded-lg border-0 bg-sky-100 hover:bg-sky-200">Reload
     TensorFlow</button>
 
-<p><small>Depending on the availability / speed to access Jsdelivr CDN services, TensorFlow may fail loading at the
+<p style="color: grey;"><small>Depending on the availability / speed to access Jsdelivr CDN services, TensorFlow may fail loading at the
         first time, click on the button to retry it. It should be loaded within 5-10 sec. </small></p>
 
 <div>
     <div id="camframe">
         Your cam is attached below. Please give us access to your camera.
+        <p style="color: grey;"><small>(You don't need to consider about the privacy as all the pictures are executed offline. )</small></p>
         <video class="rounded-lg" autoplay playsinline muted id="webcam" width="224" height="224" alt="loading"></video>
     </div>
     <div id="objectName">
@@ -37,7 +38,7 @@ author: Kevin/Tristan
 
 
 <div>
-    <p><small>PS: Remember to save your own results! The photo and results won't be saved automatically! However, by this we also featuring auto-init just by refreshing the page. </small></p>
+    <p style="color: grey;"><small>PS: Remember to save your own results! The photo and results won't be saved automatically! However, by this we also featuring auto-init just by refreshing the page. </small></p>
 </div>
 
 <script type="text/javascript" src="../transfer/js/index.js"></script>
