@@ -2,12 +2,26 @@ const classifier = knnClassifier.create();
 const webcamElement = document.getElementById('webcam');
 let net;
 
-let example = [];
-let ncntEx = 0;
+let classes = ["default"];
+let ncntEx = 1;
+
+function addExampleByClick() {
+    if (ncntEx == 10) {
+        alert("You've touched the highest limit of numbers of pictures, please refresh the page to identify new ones. ")
+    }
+    let name = document.getElementById("exampleName").value;
+    document.getElementById("objectList").innerHTML += "<u>" + name + "</u> ";
+    console.log("added");
+    classes[ncntEx] = name;
+    webcamScan();
+    ncntEx++;
+    console.log(ncntEx);
+}
 
 async function webcamScan() {
     document.getElementById("status").innerHTML = "<u style='color: red; '>loading... </u>";
     net = await mobilenet.load();
+    var webcam = await tf.data.webcam(webcamElement);
     console.log("Finished");
     // console.log("document.getElementById('status').innerHTML");
     document.getElementById("status").innerHTML = "<u style='color: green; '>Done! </u>";
@@ -15,7 +29,6 @@ async function webcamScan() {
     // Create an object from Tensorflow.js data API which could capture image
     // from the web camera as Tensor.
 
-    const webcam = await tf.data.webcam(webcamElement);
 
     // Reads an image from the webcam and associates it with a specific class
     // index. 创建一个例子把函数直接赋值给一个变量
@@ -35,7 +48,7 @@ async function webcamScan() {
 
     // When clicking a button, add an example for that class.
     // 具体的方法调用
-    //   document.getElementById('class-a').addEventListener('click', () => addExample(0));
+      document.getElementById('submit').addEventListener('click', () => addExample(ncntEx));
     //   document.getElementById('class-b').addEventListener('click', () => addExample(1));
     //   document.getElementById('class-c').addEventListener('click', () => addExample(2));
 
@@ -47,10 +60,12 @@ async function webcamScan() {
             const activation = net.infer(img, 'conv_preds');
             // Get the most likely class and confidence from the classifier module.
             const result = await classifier.predictClass(activation);
-
-            const classes = ['Happy', 'Okay', 'Sad'];
-            document.getElementById('text').innerText = "Your emotional status: " + classes[result.label];
-
+            document.getElementById('ans').innerText = classes[result.label - 1];
+            document.getElementById('ansProb').innerText = result.confidences[result.label]
+            console.log(result);
+            console.log(result.confidences[result.label]);
+            console.log(classes[result.label - 1]);
+            console.log(classes);
             img.dispose();
         }
         await tf.nextFrame();

@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-      {{title}}
+        {{title}}
     </title>
     {% if description %}
-      <meta name="description" content="{{description}}"/>
+    <meta name="description" content="{{description}}" />
     {% endif %}
     {% block head %}{% endblock %}
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
     {% if prism == true %}
-      <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css">
     {% endif %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
-<script type="text/javascript" src="../transfer/js/tfjs"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
-<script type="text/javascript" src="../transfer/js/knn-classifier"></script>
-  </head>
-  <body>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+
+<body>
     {% include "./partials/navbar.html" %}
 
     {{ content | safe }}
@@ -32,10 +31,11 @@
     <script src="/static/js/alpine.js"></script>
 
     {% if path == "home" %}
-      <!-- Netlify Identity Widget -->
-      <!-- Needed only if you are using Netlify Identity feature -->
-      <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- Netlify Identity Widget -->
+    <!-- Needed only if you are using Netlify Identity feature -->
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     {% endif %}
 
-  </body>
+</body>
+
 </html>

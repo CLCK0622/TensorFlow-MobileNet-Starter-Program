@@ -5,6 +5,10 @@ date: 2023-02-02 09:28:43.00
 author: Kevin/Tristan
 ---
 
+<script type="text/javascript" src="../transfer/js/tfjs"></script>
+<script type="text/javascript" src="../transfer/js/mobilenet"></script>
+<script type="text/javascript" src="../transfer/js/knn-classifier"></script>
+
 <p>This is a site for image recognization.</p>
 
 <p>The answer is: <u><span id="ans">loading...</span></u></p>
@@ -16,29 +20,34 @@ author: Kevin/Tristan
 <button onclick="webcamScan()" class="mr-4 py-2 px-4 rounded-lg border-0 bg-sky-100 hover:bg-sky-200">Reload
     TensorFlow</button>
 
-<p style="color: grey;"><small>Depending on the availability / speed to access Jsdelivr CDN services, TensorFlow may fail loading at the
-        first time, click on the button to retry it. It should be loaded within 5-10 sec. </small></p>
+<p style="color: grey;"><small>Depending on the availability / speed to access Jsdelivr CDN services, TensorFlow may
+        fail loading at the first time, click on the button to retry it. It should be loaded within 5-10 sec. </small>
+</p>
 
 <div>
     <div id="camframe">
-        Your cam is attached below. Please give us access to your camera.
-        <p style="color: grey;"><small>(You don't need to consider about the privacy as all the pictures are executed offline. )</small></p>
+        Your cam is attached below. Please grant us access to your camera.
+        <p style="color: grey;"><small>(You don't need to consider about the privacy as all the pictures are executed
+                offline. )</small></p>
         <video class="rounded-lg" autoplay playsinline muted id="webcam" width="224" height="224" alt="loading"></video>
     </div>
     <div id="objectName">
         <p>
-            <p style="display: inline;">Tell us what this is:  </p>
-        <input id="submitUrl" class="shadow-2xl bg-sky-100 hover:bg-sky-200 rounded-lg border-1 border-sky-700"
-            type="text" onchange="replaceImg()" style="width: 50%; display: inline;" />
-            </p>
-        <button onclick="webcamScan()" class="mr-4 py-2 px-4 rounded-lg border-0 bg-sky-100 hover:bg-sky-200">Submit</button>
-        <p>Now, TensorFlow will recognize the object from the followings: <p id="objectList"></p></p>
+        <p style="display: inline;">Tell us what this is: </p>
+        <input id="exampleName" class="shadow-2xl bg-sky-100 hover:bg-sky-200 rounded-lg border-1 border-sky-700" type="text" style="width: 50%; display: inline;" />
+        </p>
+        <button id="submit" onclick="addExampleByClick()" class="mr-4 py-2 px-4 rounded-lg border-0 bg-sky-100 hover:bg-sky-200">Submit</button>
+        <p>Now, TensorFlow will recognize the object from the followings (at most 10 for better recognition quality):
+        <p id="objectList"></p>
+        </p>
     </div>
 </div>
 
 
 <div>
-    <p style="color: grey;"><small>PS: Remember to save your own results! The photo and results won't be saved automatically! However, by this we also featuring auto-init just by refreshing the page. </small></p>
+    <p style="color: grey;"><small>PS: Remember to save your own results! The photo and results won't be saved
+            automatically! However, doing this by design also let us feature auto-init just by refreshing the page.
+        </small></p>
 </div>
 
 <script type="text/javascript" src="../transfer/js/index.js"></script>
