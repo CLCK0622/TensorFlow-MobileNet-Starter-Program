@@ -1,6 +1,6 @@
 const classifier = knnClassifier.create();
 const webcamElement = document.getElementById('webcam');
-let net, run;
+let net;
 let init = true;
 
 let classes = ["uncaught"];
@@ -23,7 +23,6 @@ function addExampleByClick() {
     document.getElementById("objectList").innerHTML += "<u>" + name + "</u> ";
     console.log("added");
     classes[ncntEx] = name;
-    run = true;
     webcamScan();
     ncntEx++;
     console.log(ncntEx);
@@ -63,8 +62,7 @@ async function webcamScan() {
 
     // When clicking a button, add an example for that class.
     // 具体的方法调用
-      if (run) addExample(ncntEx);
-    //   document.getElementById('class-b').addEventListener('click', () => addExample(1));
+      document.getElementById('submit').addEventListener('click', () => addExample(ncntEx));
     //   document.getElementById('class-c').addEventListener('click', () => addExample(2));
 
 
