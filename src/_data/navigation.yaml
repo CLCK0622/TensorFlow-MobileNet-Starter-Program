@@ -2,3 +2,5 @@
 items:
   - text: Image Recognization
     url: "/imgrec"
+  - text: Tranfer Learning
+    url: "/transfer"
