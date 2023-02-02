@@ -9,6 +9,6 @@ links:
   - title: Image Recognition
     url: "/imgrec"
     desc: A simple but useful tool using TensorFlow Mobilenet.
-  - title: Mood Recognition
-    url: ""
-    desc: WIP
+  - title: Tranfer Learning
+    url: "/transfer"
+    desc: Using your own object and name to train a model. Supported also by TensorFlow Mobilenet. 
