@@ -6,7 +6,7 @@ let init = true;
 let classes = ["uncaught"];
 let ncntEx = 1;
 
-alert("Due to some special feature of TensorFlow Mobilenet, you should click the following INIT button before usage, or you won't be able to recognize the first object. ")
+alert("Due to some special feature of TensorFlow Mobilenet, you should click the following INIT button before usage, and you may need to train the model multiple times for better accuracy. ")
 
 function initClick() {
     let button = document.getElementById("butFrame");
