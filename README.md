@@ -1,4 +1,4 @@
-# AI-Programme
+# AI-Program
 
 ## live-demo
 
