@@ -1,9 +1,19 @@
 const classifier = knnClassifier.create();
 const webcamElement = document.getElementById('webcam');
 let net;
+let init = true;
 
-let classes = ["default"];
+let classes = ["uncaught"];
 let ncntEx = 1;
+
+alert("Due to some special feature of TensorFlow Mobilenet, you should click the following INIT button before usage, or you won't be able to recognize the first object. ")
+
+function initClick() {
+    let button = document.getElementById("butFrame");
+    // button.onclick = "addExampleByClick()";
+    button.innerHTML = "<button id='submit' onclick='addExampleByClick()' class='mr-4 py-2 px-4 rounded-lg bg-sky-100 hover:bg-sky-700'>Submit</button>"
+    console.log(button);
+}
 
 function addExampleByClick() {
     if (ncntEx == 10) {
@@ -16,6 +26,10 @@ function addExampleByClick() {
     webcamScan();
     ncntEx++;
     console.log(ncntEx);
+    // if (init) {
+    //     ncntEx--; init = false;
+    //     addExampleByClick();
+    // }
 }
 
 async function webcamScan() {
@@ -48,7 +62,7 @@ async function webcamScan() {
 
     // When clicking a button, add an example for that class.
     // 具体的方法调用
-      document.getElementById('submit').addEventListener('click', () => addExample(ncntEx));
+    //   document.getElementById('submit').addEventListener('click', () => addExample(ncntEx));
     //   document.getElementById('class-b').addEventListener('click', () => addExample(1));
     //   document.getElementById('class-c').addEventListener('click', () => addExample(2));
 
