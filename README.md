@@ -21,3 +21,5 @@
 2. Transfer Learning
 
 Detailed descriptions are attached in the site. 
+
+![Alt](https://repobeats.axiom.co/api/embed/7be8269648db832756882a8ec6499687fe7c24e3.svg "Repobeats analytics image")
