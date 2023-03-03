@@ -1,5 +1,7 @@
 # AI-Program
 
+A program that features AI image processing. 
+
 ## live-demo
 
 [https://ai-program.clckblog.space/](https://ai-program.clckblog.space/)
